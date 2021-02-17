@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose-Refactoring-Kata", "GildedRose-Refactoring-Kata\GildedRose-Refactoring-Kata.csproj", "{6C3368E2-C5A9-4F71-8563-D17C737D0A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose-Refactoring-KataTests", "GildedRose-Refactoring-KataTests\GildedRose-Refactoring-KataTests.csproj", "{D6A5B749-6902-4BFD-9E58-BF73F09FE464}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C3368E2-C5A9-4F71-8563-D17C737D0A62}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{6C3368E2-C5A9-4F71-8563-D17C737D0A62}.Debug|anycpu.Build.0 = Debug|anycpu
+		{6C3368E2-C5A9-4F71-8563-D17C737D0A62}.Release|anycpu.ActiveCfg = Release|anycpu
+		{6C3368E2-C5A9-4F71-8563-D17C737D0A62}.Release|anycpu.Build.0 = Release|anycpu
+		{D6A5B749-6902-4BFD-9E58-BF73F09FE464}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{D6A5B749-6902-4BFD-9E58-BF73F09FE464}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{D6A5B749-6902-4BFD-9E58-BF73F09FE464}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{D6A5B749-6902-4BFD-9E58-BF73F09FE464}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
