@@ -14,13 +14,13 @@ namespace GildedRoseRefactoringKata.Model
 
         public void UpdateQuality()
         {
-            if (Name != "Aged Brie" && Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (Name != Products.Aged_Brie && Name != Products.Backstage)
             {
                 if (Quality > 0)
                 {
-                    if (Name != "Sulfuras, Hand of Ragnaros")
+                    if (Name != Products.Sulfuras)
                     {
-                        Quality = Quality - 1;
+                        Quality -= 1;
                     }
                 }
             }
@@ -28,15 +28,15 @@ namespace GildedRoseRefactoringKata.Model
             {
                 if (Quality < 50)
                 {
-                    Quality = Quality + 1;
+                    Quality += 1;
 
-                    if (Name == "Backstage passes to a TAFKAL80ETC concert")
+                    if (Name == Products.Backstage)
                     {
                         if (SellIn < 11)
                         {
                             if (Quality < 50)
                             {
-                                Quality = Quality + 1;
+                                Quality += 1;
                             }
                         }
 
@@ -44,42 +44,42 @@ namespace GildedRoseRefactoringKata.Model
                         {
                             if (Quality < 50)
                             {
-                                Quality = Quality + 1;
+                                Quality += 1;
                             }
                         }
                     }
                 }
             }
 
-            if (Name != "Sulfuras, Hand of Ragnaros")
+            if (Name != Products.Sulfuras)
             {
-                SellIn = SellIn - 1;
+                SellIn -= 1;
             }
 
             if (SellIn < 0)
             {
-                if (Name != "Aged Brie")
+                if (Name != Products.Aged_Brie)
                 {
-                    if (Name != "Backstage passes to a TAFKAL80ETC concert")
+                    if (Name != Products.Backstage)
                     {
                         if (Quality > 0)
                         {
-                            if (Name != "Sulfuras, Hand of Ragnaros")
+                            if (Name != Products.Sulfuras)
                             {
-                                Quality = Quality - 1;
+                                Quality -= 1;
                             }
                         }
                     }
                     else
                     {
-                        Quality = Quality - Quality;
+                        Quality -= Quality;
                     }
                 }
                 else
                 {
                     if (Quality < 50)
                     {
-                        Quality = Quality + 1;
+                        Quality += 1;
                     }
                 }
             }
