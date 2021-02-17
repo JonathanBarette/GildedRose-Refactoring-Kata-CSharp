@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GildedRoseRefactoringKata;
+using GildedRoseRefactoringKata.Model;
 using NUnit.Framework;
 
 namespace GildedRoseRefactoringKataTests

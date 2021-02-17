@@ -1,5 +1,5 @@
 ﻿using System;
-namespace GildedRoseRefactoringKata
+namespace GildedRoseRefactoringKata.Model
 {
     public class Item
     {
