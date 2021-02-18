@@ -16,16 +16,14 @@ namespace GildedRoseRefactoringKata.Model
 
         public void UpdateQuality()
         {
-            if (Name != Products.Aged_Brie && Name != Products.Backstage)
+            switch (Name)
             {
-                this.DecreaseQualityWith(1);
-            }
-            else
-            {
-                this.IncreaseQualityWith(1);
+                case Products.Aged_Brie:
+                    this.IncreaseQualityWith(1);
+                    break;
+                case Products.Backstage:
+                    this.IncreaseQualityWith(1);
 
-                if (Name == Products.Backstage)
-                {
                     if (SellIn < 11)
                     {
                         this.IncreaseQualityWith(1);
@@ -35,29 +33,30 @@ namespace GildedRoseRefactoringKata.Model
                     {
                         this.IncreaseQualityWith(1);
                     }
-                }
+                    break;
+                default:
+                    this.DecreaseQualityWith(1);
+                    break;
             }
 
             this.DecreaseSellIn();
 
             if (SellIn < 0)
             {
-                if (Name != Products.Aged_Brie)
+                switch (Name)
                 {
-                    if (Name != Products.Backstage)
-                    {
-                        this.DecreaseQualityWith(1);
-                    }
-                    else
-                    {
+                    case Products.Aged_Brie:
+                        this.IncreaseQualityWith(1);
+                        break;
+                    case Products.Backstage:
                         this.DecreaseQualityWith(Quality);
-                    }
-                }
-                else
-                {
-                    this.IncreaseQualityWith(1);
+                        break;
+                    default:
+                        this.DecreaseQualityWith(1);
+                        break;
                 }
             }
+
         }
     }
 }
