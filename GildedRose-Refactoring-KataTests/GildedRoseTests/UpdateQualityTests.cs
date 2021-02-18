@@ -231,5 +231,30 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             var expectedItem = items[0];
             Assert.AreEqual(expectedItem.Quality, 0);
         }
+
+        /// <summary>
+        /// "Conjured" items degrade in Quality twice as fast as normal items
+        /// </summary>
+        /// <param name="sellIn">The range of sellIn.</param>
+        /// <param name="quality">The range of quality.</param>
+        [Test]
+        public void GildedRose_UpdateQuality_ConjuredProductDegradesTwiceAsFastThanNormalItems(
+            [Range(5, -5)] int sellIn,
+            [Range(2, 50)] int quality)
+        {
+            //Arrange
+            var items = new List<Item>
+            {
+                new Item { Name = "Conjured Mana Cake", SellIn = sellIn, Quality = quality }
+            };
+
+            //Act
+            var gildedRose = new GildedRose(items);
+            gildedRose.UpdateQuality();
+
+            //Assert
+            var expectedItem = items[0];
+            Assert.AreEqual(expectedItem.Quality, quality - 2);
+        }
     }
 }

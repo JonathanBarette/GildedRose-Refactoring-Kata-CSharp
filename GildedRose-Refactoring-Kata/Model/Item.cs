@@ -27,6 +27,9 @@ namespace GildedRoseRefactoringKata.Model
                     this.IncreaseQualityWith(SellIn >= 0 && SellIn < 5 ? 3 : 0);
                     this.DecreaseQualityWith(SellIn < 0 ? Quality : 0);
                     break;
+                case Products.Conjured:
+                    this.DecreaseQualityWith(2);
+                    break;
                 default:
                     this.DecreaseQualityWith(SellIn < 0 ? 2 : 1);
                     break;
