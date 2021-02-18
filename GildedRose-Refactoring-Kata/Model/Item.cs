@@ -18,27 +18,21 @@ namespace GildedRoseRefactoringKata.Model
         {
             this.DecreaseSellIn();
 
-            if (Name == Products.Backstage)
-            {
-                this.IncreaseQualityWith(1);
-
-                if (SellIn < 10)
-                {
-                    this.IncreaseQualityWith(1);
-                }
-
-                if (SellIn < 5)
-                {
-                    this.IncreaseQualityWith(1);
-                }
-            }
-
             switch (Name)
             {
                 case Products.Aged_Brie:
                     this.IncreaseQualityWith(SellIn < 0 ? 2 : 1);
                     break;
                 case Products.Backstage:
+                    if (SellIn >= 10)
+                        this.IncreaseQualityWith(1);
+
+                    if (SellIn >= 5 && SellIn < 10)
+                        this.IncreaseQualityWith(2);
+
+                    if (SellIn >= 0 && SellIn < 5)
+                        this.IncreaseQualityWith(3);
+
                     if (SellIn < 0)
                         this.DecreaseQualityWith(Quality);
                     break;
