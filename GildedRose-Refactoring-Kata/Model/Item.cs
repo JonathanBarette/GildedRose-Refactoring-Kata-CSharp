@@ -16,47 +16,42 @@ namespace GildedRoseRefactoringKata.Model
 
         public void UpdateQuality()
         {
-            switch (Name)
+            if (Name == Products.Backstage)
             {
-                case Products.Aged_Brie:
-                    this.IncreaseQualityWith(1);
-                    break;
-                case Products.Backstage:
-                    this.IncreaseQualityWith(1);
+                this.IncreaseQualityWith(1);
 
-                    if (SellIn < 11)
-                    {
-                        this.IncreaseQualityWith(1);
-                    }
+                if (SellIn < 11)
+                {
+                    this.IncreaseQualityWith(1);
+                }
 
-                    if (SellIn < 6)
-                    {
-                        this.IncreaseQualityWith(1);
-                    }
-                    break;
-                default:
-                    this.DecreaseQualityWith(1);
-                    break;
+                if (SellIn < 6)
+                {
+                    this.IncreaseQualityWith(1);
+                }
             }
 
             this.DecreaseSellIn();
 
-            if (SellIn < 0)
+            switch (Name)
             {
-                switch (Name)
-                {
-                    case Products.Aged_Brie:
+                case Products.Aged_Brie:
+                    if (SellIn < 0)
+                        this.IncreaseQualityWith(2);
+                    else
                         this.IncreaseQualityWith(1);
-                        break;
-                    case Products.Backstage:
+                    break;
+                case Products.Backstage:
+                    if (SellIn < 0)
                         this.DecreaseQualityWith(Quality);
-                        break;
-                    default:
+                    break;
+                default:
+                    if (SellIn < 0)
+                        this.DecreaseQualityWith(2);
+                    else
                         this.DecreaseQualityWith(1);
-                        break;
-                }
+                    break;
             }
-
         }
     }
 }
