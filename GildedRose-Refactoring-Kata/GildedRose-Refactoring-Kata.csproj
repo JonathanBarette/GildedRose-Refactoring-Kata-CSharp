@@ -35,9 +35,11 @@
     <Compile Include="GildedRose.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Products.cs" />
+    <Compile Include="Extensions\ItemExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

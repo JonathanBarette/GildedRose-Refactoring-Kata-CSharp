@@ -1,4 +1,6 @@
 ﻿using System;
+using GildedRoseRefactoringKata.Extensions;
+
 namespace GildedRoseRefactoringKata.Model
 {
     public class Item
@@ -20,7 +22,7 @@ namespace GildedRoseRefactoringKata.Model
                 {
                     if (Name != Products.Sulfuras)
                     {
-                        Quality -= 1;
+                        this.DecreaseQualityWith(1);
                     }
                 }
             }
@@ -28,7 +30,7 @@ namespace GildedRoseRefactoringKata.Model
             {
                 if (Quality < 50)
                 {
-                    Quality += 1;
+                    this.IncreaseQualityWith(1);
 
                     if (Name == Products.Backstage)
                     {
@@ -36,7 +38,7 @@ namespace GildedRoseRefactoringKata.Model
                         {
                             if (Quality < 50)
                             {
-                                Quality += 1;
+                                this.IncreaseQualityWith(1);
                             }
                         }
 
@@ -44,7 +46,7 @@ namespace GildedRoseRefactoringKata.Model
                         {
                             if (Quality < 50)
                             {
-                                Quality += 1;
+                                this.IncreaseQualityWith(1);
                             }
                         }
                     }
@@ -66,20 +68,20 @@ namespace GildedRoseRefactoringKata.Model
                         {
                             if (Name != Products.Sulfuras)
                             {
-                                Quality -= 1;
+                                this.DecreaseQualityWith(1);
                             }
                         }
                     }
                     else
                     {
-                        Quality -= Quality;
+                        this.DecreaseQualityWith(Quality);
                     }
                 }
                 else
                 {
                     if (Quality < 50)
                     {
-                        Quality += 1;
+                        this.IncreaseQualityWith(1);
                     }
                 }
             }
