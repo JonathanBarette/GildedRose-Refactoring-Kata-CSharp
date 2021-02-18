@@ -4,6 +4,9 @@ namespace GildedRoseRefactoringKata.Extensions
 {
     public static class ItemExtensions
     {
+        const int Max_Quality = 50;
+        const int Min_Quality = 0;
+
         /// <summary>
         /// Increase the quality with.
         /// </summary>
@@ -15,7 +18,10 @@ namespace GildedRoseRefactoringKata.Extensions
             if (addingQuality <= 0)
                 return;
 
-            item.Quality = item.Quality += addingQuality;
+            var newQuality = item.Quality += addingQuality;
+            item.Quality = newQuality <= Max_Quality ?
+                           newQuality :
+                           Max_Quality;
         }
 
         /// <summary>
@@ -29,7 +35,14 @@ namespace GildedRoseRefactoringKata.Extensions
             if (removingQuality <= 0)
                 return;
 
-            item.Quality = item.Quality -= removingQuality;
+            // "Sulfuras", being a legendary item, never decreases in Quality.
+            if (item.Name == Products.Sulfuras)
+                return;
+
+            var newQuality = item.Quality -= removingQuality;
+            item.Quality = newQuality >= Min_Quality ?
+                           newQuality :
+                           Min_Quality;
         }
     }
 }

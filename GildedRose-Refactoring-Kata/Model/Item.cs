@@ -18,37 +18,22 @@ namespace GildedRoseRefactoringKata.Model
         {
             if (Name != Products.Aged_Brie && Name != Products.Backstage)
             {
-                if (Quality > 0)
-                {
-                    if (Name != Products.Sulfuras)
-                    {
-                        this.DecreaseQualityWith(1);
-                    }
-                }
+                this.DecreaseQualityWith(1);
             }
             else
             {
-                if (Quality < 50)
+                this.IncreaseQualityWith(1);
+
+                if (Name == Products.Backstage)
                 {
-                    this.IncreaseQualityWith(1);
-
-                    if (Name == Products.Backstage)
+                    if (SellIn < 11)
                     {
-                        if (SellIn < 11)
-                        {
-                            if (Quality < 50)
-                            {
-                                this.IncreaseQualityWith(1);
-                            }
-                        }
+                        this.IncreaseQualityWith(1);
+                    }
 
-                        if (SellIn < 6)
-                        {
-                            if (Quality < 50)
-                            {
-                                this.IncreaseQualityWith(1);
-                            }
-                        }
+                    if (SellIn < 6)
+                    {
+                        this.IncreaseQualityWith(1);
                     }
                 }
             }
@@ -64,13 +49,7 @@ namespace GildedRoseRefactoringKata.Model
                 {
                     if (Name != Products.Backstage)
                     {
-                        if (Quality > 0)
-                        {
-                            if (Name != Products.Sulfuras)
-                            {
-                                this.DecreaseQualityWith(1);
-                            }
-                        }
+                        this.DecreaseQualityWith(1);
                     }
                     else
                     {
@@ -79,13 +58,9 @@ namespace GildedRoseRefactoringKata.Model
                 }
                 else
                 {
-                    if (Quality < 50)
-                    {
-                        this.IncreaseQualityWith(1);
-                    }
+                    this.IncreaseQualityWith(1);
                 }
             }
-
         }
     }
 }
