@@ -38,10 +38,7 @@ namespace GildedRoseRefactoringKata.Model
                 }
             }
 
-            if (Name != Products.Sulfuras)
-            {
-                SellIn -= 1;
-            }
+            this.DecreaseSellIn();
 
             if (SellIn < 0)
             {

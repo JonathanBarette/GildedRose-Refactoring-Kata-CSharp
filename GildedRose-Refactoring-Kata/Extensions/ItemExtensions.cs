@@ -44,5 +44,18 @@ namespace GildedRoseRefactoringKata.Extensions
                            newQuality :
                            Min_Quality;
         }
+
+        /// <summary>
+        /// Decrease the sell in.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        public static void DecreaseSellIn(this Item item)
+        {
+            // "Sulfuras", being a legendary item, never has to be sold
+            if (item.Name == Products.Sulfuras)
+                return;
+
+            item.SellIn -= 1;
+        }
     }
 }
