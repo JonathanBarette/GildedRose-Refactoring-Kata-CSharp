@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GildedRoseRefactoringKata.Extensions;
 using GildedRoseRefactoringKata.Model;
 
 namespace GildedRoseRefactoringKata
@@ -15,6 +16,7 @@ namespace GildedRoseRefactoringKata
         {
             foreach(var item in Items)
             {
+                item.DecreaseSellIn();
                 item.UpdateQuality();
             }
         }
