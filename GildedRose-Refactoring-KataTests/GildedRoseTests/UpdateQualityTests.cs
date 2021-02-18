@@ -73,7 +73,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             var quality = 20;
             var items = new List<Item>
             {
-                new Item { Name = "Aged Brie", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Aged_Brie, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -90,9 +90,10 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
         /// </summary>
         /// <param name="productName">The product name.</param>
         [TestCase("product")]
-        [TestCase("Sulfuras, Hand of Ragnaros")]
-        [TestCase("Aged Brie")]
-        [TestCase("Backstage passes to a TAFKAL80ETC concert")]
+        [TestCase(Products.Aged_Brie)]
+        [TestCase(Products.Backstage)]
+        [TestCase(Products.Conjured)]
+        [TestCase(Products.Sulfuras)]
         public void GildedRose_UpdateQuality_QualityDoesntIncreaseMoreThan50ForAllProducts(
             string productName)
         {
@@ -123,7 +124,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             //Arrange
             var items = new List<Item>
             {
-                new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Sulfuras, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -148,7 +149,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             var quality = 0;
             var items = new List<Item>
             {
-                new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Backstage, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -171,7 +172,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             var quality = 0;
             var items = new List<Item>
             {
-                new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Backstage, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -195,7 +196,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             var quality = 0;
             var items = new List<Item>
             {
-                new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Backstage, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -220,7 +221,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             //Arrange
             var items = new List<Item>
             {
-                new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Backstage, SellIn = sellIn, Quality = quality }
             };
 
             //Act
@@ -245,7 +246,7 @@ namespace GildedRoseRefactoringKataTests.GildedRoseTests
             //Arrange
             var items = new List<Item>
             {
-                new Item { Name = "Conjured Mana Cake", SellIn = sellIn, Quality = quality }
+                new Item { Name = Products.Conjured, SellIn = sellIn, Quality = quality }
             };
 
             //Act
