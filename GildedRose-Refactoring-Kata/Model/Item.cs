@@ -14,6 +14,9 @@ namespace GildedRoseRefactoringKata.Model
             return this.Name + ", " + this.SellIn + ", " + this.Quality;
         }
 
+        /// <summary>
+        /// Update the quality of an item.
+        /// </summary>
         public void UpdateQuality()
         {
             switch (Name)

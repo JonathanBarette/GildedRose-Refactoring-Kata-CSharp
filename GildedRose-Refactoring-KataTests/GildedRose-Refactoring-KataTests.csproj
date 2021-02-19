@@ -45,6 +45,7 @@
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="GildedRoseTests\UpdateQualityTests.cs" />
+    <Compile Include="ModelTests\ItemTests\UpdateQualityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,6 +60,8 @@
     <Folder Include="GildedRoseTests\" />
     <Folder Include="GildedRose_NewTests\" />
     <Folder Include="GildedRoseTests\" />
+    <Folder Include="ModelTests\" />
+    <Folder Include="ModelTests\ItemTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
